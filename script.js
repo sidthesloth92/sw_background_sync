@@ -26,7 +26,7 @@ function registerOneTimeSync() {
                         console.log('Sync registration failed', error);
                     });
             } else {
-                console.log("Background Sync not supported");
+                console.log("Onw time Sync not supported");
             }
         });
     } else {
@@ -37,8 +37,9 @@ function registerOneTimeSync() {
 function registerPeriodicSync() {
     if (navigator.serviceWorker.controller) {
         navigator.serviceWorker.ready.then(function(reg) {
-            if (reg.sync) {
-                reg.periodicSync.register({
+            console.dir(reg);
+            if (reg.periodicSync) {
+                reg.sync.register({
                         tag: 'periodicSync',
                         minPeriod: 0,
                         powerState: 'auto',
@@ -51,7 +52,7 @@ function registerPeriodicSync() {
                         console.log('Periodic Sync registration failed', error);
                     });
             } else {
-                console.log("Background Sync not supported");
+                console.log("Periodic Sync not supported");
             }
         });
     } else {

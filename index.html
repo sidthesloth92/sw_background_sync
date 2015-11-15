@@ -4,11 +4,16 @@
 <head>
     <title> Service Workers - Background Sync</title>
     <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <button type="button" onclick="registerOneTimeSync()">Request for One Time Sync</button>
-    <button type="button" onclick="registerPeriodicSync()">Register For Periodic Sync</button>
+    <div class="container">
+        <div class="title">Service Worker - Communication</div>
+        <button type="button" onclick="registerOneTimeSync()">One Time Sync</button>
+        <button type="button" onclick="registerPeriodicSync()">Periodic Sync</button>
+        <div class="help">Note: Open your console and make sure to refresh the page once to get demo working. One time sync supported in Chrome Canary. Periodic sync not supported yet.</div>
+    </div>
 </body>
 
 </html>
